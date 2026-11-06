@@ -39,5 +39,7 @@ if ingredients_list:
         st.success('Your Smoothie is ordered!', icon="✅")
 
 import requests  
-smoothiefroot_response = requests.get("[https://my.smoothiefroot.com/api/fruit/watermelon](https://my.smoothiefroot.com/api/fruit/watermelon)")  
-st.text(smoothiefroot_response)
+# URL文字列のみ（純粋な https://...）を指定
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
+# 取得したレスポンスのJSONデータを表示
+st.text(smoothiefroot_response.json())
